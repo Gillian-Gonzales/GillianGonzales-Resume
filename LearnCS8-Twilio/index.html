@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Flashback to the 2000s with some Y2K tops, dresses, bags, and more!">
+    <meta name="author" content="862170113">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Y2K Clothing -->
+    <title>Y2K Clothing and Accessories</title>
+    <link href="product.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+      <!-- Top Menu Bar -->
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-1" href="https://ASOS.com" target="_blank">ASOS</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-2" href="https://depop.com" target="_blank">depop</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-3" href="https://cyberspaceshop.com" target="_blank">cyberspaceshop</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-4" href="https://princesspolly.com" target="_blank">princesspolly</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-5" href="https://urbanoutfitters.com" target="_blank">urbanoutfitters</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-6" href="https://pinterest.com" target="_blank">pinterest</a>
+        <a class="py-2 d-none d-md-inline-block" id="menu-item-7" href="https://UNIF.com" target="_blank">UNIF</a>
+      </div>
+     </nav>
+     <!-- Main Header Section h1-->
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-0 text-center bg-light">
+    <div class="col-md-8 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Flashback to Y2K</h1></h1>
+        <p class="lead font-weight-normal">As time moves forward, fashion is going back! Today's "new" style is all about leather, satin, metallic, and even cheetah print! Funky patterns that go perfect with tiny bags and flashy sunglasses!</p>
+        <a class="btn btn-outline-secondary" href="https://youtu.be/Ra76E4-b_4M">FASHION TIPS AND INSPO</a>
+    </div>
+</div>
+<!-- Left Tile -->
+<div class="d-md-flex flex-md-equal w-100">
+    <div class="bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+            <h2 class="display-5">Sign up</h2>
+            <p class="lead">Sign up now to get instant access to our educational content</p>
+        </div>
+        <!-- Web form when submitted will send a text message -->
+        <form class="p-2" onsubmit="sendTextMessage(); return false;">
+            <!-- Full Name Form Field -->
+            <div class="form-group">
+                <label for="example-first-name">Full Name</label>
+                <input type="text" value="Full Name" class="form-control" id="example-first-name" aria-describedby="emailHelp">
+            </div>
+            <!-- Phone Number Form Field -->
+            <div class="form-group">
+                <label for="example-tel-input">Phone number</label>
+                <input type="tel" class="form-control" value="1408555555" id="example-tel-input">
+            </div>
+            <!-- JavaScript that handles onSubmit logic -->
+            <!-- Configure the XHR request below with your own credentials -->
+            <script>
+            function sendTextMessage() {
+                console.log("Hello world!");
+                var xhr = new XMLHttpRequest();
+                var accountSID = "AC26802088a727faaa72061ed73ed8d6ec";
+                var authToken = "93edde2abdc9ad594a3d89f188f9ac6e";
+                var base64encoded = accountSID + ":" + authToken;
+                var params = "To=" + document.getElementById('example-tel-input').value + "&From=" + "19255216477" + "&Body=" + "Hello " + document.getElementById('example-first-name').value + " thanks for subscribing! You are one step closer to your Y2K fashion goals!"
+                xhr.open("POST", "https://api.twilio.com/2010-04-01/Accounts/" + accountSID + "/Messages.json", true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.setRequestHeader('Authorization', 'Basic ' + btoa(base64encoded));
+                xhr.send(params);
+            }
+            </script>
+            <!-- Submit button that will execute the sendTextMessage function -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <!-- Right Tile -->
+    <div class="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+            <h2 class="display-5">Another Section</h2>
+            <p class="lead">Put some text here about the company or product you are talking about. Then below add an image</p>
+            <img class="mx-auto" src="example_image.png" height="250px">
+        </div>
+        <div class="mx-auto" style="width: 80%; height: 100px; border-radius: 21px 21px 0 0;"></div>
+    </div>
+</div>
+  </body>
+</html>
